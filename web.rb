@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-  "A new world awaits"
+  "A new world awaits NOW"
 end
