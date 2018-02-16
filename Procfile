@@ -1,1 +1,2 @@
-web: ruby web.rb --h 0.0.0.0 -p 8081
+bundle
+ruby web.rb -h 0.0.0.0 -p 8081
