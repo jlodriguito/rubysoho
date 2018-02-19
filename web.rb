@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-  "BRAND NEW TEXT"
+  "BRAND NEW TEXT: update"
 end
