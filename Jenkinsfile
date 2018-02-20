@@ -1,9 +1,14 @@
 pipeline {
-    agent { docker 'ruby' }
+    agent { 
+	docker {
+		image 'rubuild:latest' 
+		args  '-v /var/lib/jenkins/workspace/pipetest:/app'
+		}
+	}
     stages {
         stage('build') {
             steps {
-                docker build -f /root/docker/Dockerfile
+               sh 'bundle'
             }
         }
         stage('test') {
