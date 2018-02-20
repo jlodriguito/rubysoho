@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'ruby --version'
+                docker build -f /root/docker/Dockerfile
             }
         }
         stage('test') {
