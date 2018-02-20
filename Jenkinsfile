@@ -1,7 +1,7 @@
 pipeline {
     agent { 
 	docker {
-		image 'rubuild:latest' 
+		image 'ruby' 
 		args  '-v /var/lib/jenkins/workspace/pipetest:/app'
 		}
 	}
