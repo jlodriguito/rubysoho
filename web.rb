@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-  "built automatically from webhook - updates with Test"
+  "built automatically from webhook - updates with Testes"
 end
