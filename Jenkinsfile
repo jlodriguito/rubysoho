@@ -6,5 +6,10 @@ pipeline {
                 sh 'ruby --version'
             }
         }
+        stage('test') {
+            steps {
+                sh 'ruby web.rb'
+            }
+        }
     }
 }
