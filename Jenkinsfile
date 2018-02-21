@@ -5,20 +5,23 @@ pipeline {
 		args  '-v /var/lib/jenkins/workspace/pipetest:/app -p 80:8082'
 		}
 	}
-    stages {
-        stage('build') {
-            steps {
-               sh 'bundle'
-            }
-        }
-        stage('deploy') {
-            steps {
-                sh 'ruby web.rb -o 0.0.0.0 -p 8082'
-            }
-        stage('test') {
-            steps {
-                sh 'curl -i http://localhost:8082'
-            }
+        stages {
+   	     stage('build') {
+        	    	steps {
+               			sh 'bundle'
+           		 }
+       		 }
+     		stage('deploy') {
+            		steps {
+                		sh 'ruby web.rb -o 0.0.0.0 -p 8082'
+           		 }
+		}
+        	stage('test') {
+       			steps {
+                		sh 'curl -i http://localhost:8082'
+            		}
+		}
+	
 	}
         }
     }
