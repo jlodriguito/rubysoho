@@ -2,7 +2,7 @@ pipeline {
     agent { 
 	docker {
 		image 'ruby:2.4.1' 
-		args  '-v /var/lib/jenkins/workspace/pipetest:/app'
+		args  '-v /var/lib/jenkins/workspace/pipetest:/app -p 80:8082'
 		}
 	}
     stages {
@@ -11,9 +11,13 @@ pipeline {
                sh 'bundle'
             }
         }
+        stage('deploy') {
+            steps {
+                sh 'ruby web.rb -o 0.0.0.0 -p 8082'
+            }
         stage('test') {
             steps {
-                sh 'ruby web.rb'
+                sh 'curl -i http://localhost:8082'
             }
         }
     }
