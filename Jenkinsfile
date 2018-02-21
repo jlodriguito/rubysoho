@@ -15,7 +15,7 @@ pipeline {
        		 }
      		stage('deploy') {
             		steps {
-                		sh 'ruby web.rb -o 0.0.0.0 -p 8082'
+                		sh 'ruby web.rb -o 0.0.0.0 -p 8082 &'
            		 }
 		}
         	stage('test') {
