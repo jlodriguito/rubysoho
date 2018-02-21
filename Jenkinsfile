@@ -1,8 +1,9 @@
 pipeline {
     agent { 
-	docker.withRun {
+	docker {
 		image 'ruby:2.4.1' 
 		args  '-v /var/lib/jenkins/workspace/pipetest:/app -p 8082:8082'
+		reuseNode true
 	
 		}
 	}
